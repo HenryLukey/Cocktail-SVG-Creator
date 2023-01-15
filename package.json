@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/node": "^18.11.18",
+    "d3": "^7.8.1",
+    "svg-builder": "^2.0.0",
+    "svgson": "^5.2.1"
+  },
+  "name": "svg-creation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
