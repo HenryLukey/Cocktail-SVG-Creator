@@ -1,0 +1,8 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Liquid" d="M57 17C60.5965 46.5712 53.8465 53.6529 50.0112 53.5005C46.1759 53.6529 39.4259 46.5712 43.0224 17H57Z" fill="#FF007F" fill-opacity="0.85"/>
+<g id="Ice"/>
+<g id="Garnish" transform="translate(5 2) rotate(10 50 50)"/>
+<path id="LiquidOverlay" d="M57 17C60.5965 46.5712 53.8465 53.6529 50.0112 53.5005C46.1759 53.6529 39.4259 46.5712 43.0224 17H57Z" fill="#FF007F" fill-opacity="0.5"/>
+<path d="M51.5 86L62 91H38L48.5 86V56C43.8333 56 35.9 46.8 41.5 10H58.5C64.1 46.8 56.1667 56 51.5 56V86Z" fill="white" fill-opacity="0.2" stroke="black"/>
+<g id="GarnishRim"/>
+</svg>

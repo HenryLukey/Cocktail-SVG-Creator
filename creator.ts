@@ -1,14 +1,24 @@
 import * as svgson from "svgson";
 import * as fs from "fs";
-import { path } from "d3";
 
 interface ICocktail {
+    //Values needed for SVG
     name: string;
     glass: string;
     liquidColour: string;
     ice: string;
     garnish: string;
     garnishPos: string;
+    //Other
+    ingredients?: IIngredient[];
+    steps?: string[];
+    imageAddress?: string;
+}
+
+interface IIngredient {
+    name: string;
+    quantity: number;
+    units: string;
 }
 
 const cocktail1: ICocktail = {
@@ -32,15 +42,24 @@ const cocktail2: ICocktail = {
 const cocktail3: ICocktail = {
     name: "Gin and Tonic",
     glass: "Highball",
-    liquidColour: "#edf7f6",
+    liquidColour: "#000000",
     ice: "Stack",
     garnish: "None",
     garnishPos: "None"
 }
 
+const cocktail4: ICocktail = {
+    name: "Cantaritos",
+    glass: "CopperMug",
+    liquidColour: "#976f29",
+    ice: "None",
+    garnish: "Orange Peel",
+    garnishPos: "Garnish"
+}
+
 const cocktails: ICocktail[] = [];
 
-cocktails.push(cocktail1, cocktail2, cocktail3);
+cocktails.push(cocktail1, cocktail2, cocktail3, cocktail4);
 
 const openSVG = async (svgAddress: string): Promise<svgson.INode | undefined> => {
     try {
@@ -82,24 +101,27 @@ const changeLiquidColour = async (json: svgson.INode | undefined, colour: string
 
 const createCocktailSVG = async (cocktail: ICocktail) => {
     try {
-        let json = await openSVG(cocktail.glass + "Glass.svg");
+        let json = await openSVG("Templates\\Glasses\\" + cocktail.glass + "Glass.svg");
         
         json = await changeLiquidColour(json, cocktail.liquidColour);
 
         if (cocktail.garnish !== "None") {
-            json = await mergeSVG(json, cocktail.garnish.replace(" ", "") + "Garnish.svg", cocktail.garnishPos);
+            json = await mergeSVG(json, "Templates\\Garnish\\" + cocktail.garnish.replace(" ", "") + "Garnish.svg", cocktail.garnishPos);
         }
         if (cocktail.ice !== "None") {
-            json = await mergeSVG(json, cocktail.ice.replace(" ", "")  + "Ice.svg", "Ice");
+            json = await mergeSVG(json, "Templates\\Ice\\" + cocktail.ice.replace(" ", "")  + "Ice.svg", "Ice");
         }
         
         if (json) {
             const newSvg = await svgson.stringify(json);
-            await fs.promises.writeFile(cocktail.name+".svg", newSvg);
+            await fs.promises.writeFile("Created\\" + cocktail.name + ".svg", newSvg);
             console.log("Cocktail created for " + cocktail.name);
         }
     } catch (err) {
         console.log(err);
     }
 }
-createCocktailSVG(cocktail1);
+
+cocktails.forEach(cocktail => {
+    createCocktailSVG(cocktail);
+});

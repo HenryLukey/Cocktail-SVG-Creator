@@ -1,0 +1,7 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ice" transform="translate(0 -25)"/>
+<g id="Garnish" transform="translate(6 -34) rotate(40 50 50)"/>
+<path d="M12 17V82.5H67.5V17H12Z" fill="#B87333" stroke="black"/>
+<path d="M84.5 28.5H67.5V31.5H81.5V70.5H67.5V73.5H84.5V28.5Z" fill="#B87333" stroke="black"/>
+<g id="GarnishRim"/>
+</svg>

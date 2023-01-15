@@ -1,8 +1,8 @@
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="Liquid" d="M67.75 20.5L49.75 43.5L31.75 20.5H67.75Z" fill="#FF007F" fill-opacity="0.85"/>
-<g id="Ice" transform="translate(0 5)"/>
-<g id="Garnish" transform="translate(15 5) rotate(19 50 50)"/>
+<g id="Ice"/>
+<g id="Garnish" transform="translate(3, -21) rotate(19 50 50)"/>
 <path id="LiquidOverlay" d="M67.75 20.5L49.75 43.5L31.75 20.5H67.75Z" fill="#FF007F" fill-opacity="0.5"/>
 <path d="M51.5 45.5L79 10H21L48 45.5V84L34 89.5H66L51.5 84V45.5Z" fill="white" fill-opacity="0.2" stroke="black"/>
-<g id="GarnishRim"/>
+<g id="GarnishRim" transform="translate(28, -40) rotate(-25 50 50)"/>
 </svg>
